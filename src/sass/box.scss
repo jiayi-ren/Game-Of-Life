@@ -1,0 +1,17 @@
+.box {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+
+    &:hover {     
+        background-color: black;
+    }
+}
+
+.on {
+    background-color: black;
+}
+
+.off {
+    background-color: white;
+}
