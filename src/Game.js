@@ -15,11 +15,11 @@ const operations = [
 
 const Game = props => {
 
-    const [speed, setSpeed] = useState(1); // speed, 1 generation/100ms
-    const [rows, setRows] = useState(25); // row
-    const [cols, setCols] = useState(25);
+    const [speed, setSpeed] = useState(500); // speed, 1 generation/100ms
+    const [rows, setRows] = useState(50); // row
+    const [cols, setCols] = useState(100);
     const [generation, setGeneration] = useState(0);
-    const [grid, setGrid] = useState(createGrid(25, 25));
+    const [grid, setGrid] = useState(createGrid(50, 100));
     const [isRunning, setIsRunning] = useState(false);
 
     function nextGen(gridOriginal, rowsNum, colsNum) {
@@ -104,6 +104,7 @@ const Game = props => {
                 setRows={setRows}
                 setCols={setCols}
                 setSpeed={setSpeed}
+                speed={speed}
             />
         </div>
     )

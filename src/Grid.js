@@ -25,12 +25,15 @@ const Grid = props => {
     }
 
     return (
-        <div className="grid" 
-            style={{
+        <div className="grid-container" >
+            <div className="grid"
+                style={{
                 display: "grid",
-                gridTemplateColumns: `repeat(${cols}, 20px)`
-            }}>
+                gridTemplateColumns: `repeat(${cols}, 10px)`
+                }}
+            >
             {rowsArray}
+            </div>
         </div>
     )
 };
