@@ -1,10 +1,40 @@
 # Conway's Game of Life
 
-https://jren-game-of-life.netlify.app
+---
 
-https://jren-game-of-life.vercel.app
+Live: https://jren-game-of-life.netlify.app
+
+Live: https://jren-game-of-life.vercel.app
 
 
+## What is Game of Life?
+
+The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. 
+
+It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. 
+
+It is Turing complete and can simulate a universal constructor or any other Turing machine.
+
+[from Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+
+
+## What is Cellular Automata? 
+
+A _cellular automaton_ (plural: cellular automata, abbreviated _CA_) is a program that operates on data typically stored in a 2D grid. (1D, 3D and _n_-D cellular automata run on lines, cubes, etc.)
+
+A simple set of rules describes how the value in a cell on the grid changes over time, often as the result of the states of that cell's neighbors.
+
+> Sometimes neighbors includes the 4 orthogonally adjacent cells; sometimes it > includes all 8 surrounding cells including diagonals.
+
+Each round of the simulation examines the current state of the grid, and then produces an entirely new grid consisting of the old state. (Remember the discussion about double buffers earlier--we don't want to modify the same grid we're examining, lest we munge future results.)
+
+This new grid becomes the "current" state of the simulation, and the process repeats. Each new grid is referred to as a _generation_.
+
+The beautiful thing about cellular automata is that sometimes very complex behavior can emerge from very simple rules.
+
+Practically speaking, CAs have been used in biological and chemical simulations and other areas of research, such as CA-based computer processors, and other numeric techniques.
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
