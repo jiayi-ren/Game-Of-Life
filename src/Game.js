@@ -101,6 +101,9 @@ const Game = props => {
                 toggle={toggle}
                 reset={reset}
                 random={randomLexicon}
+                setRows={setRows}
+                setCols={setCols}
+                setSpeed={setSpeed}
             />
         </div>
     )
