@@ -52,12 +52,12 @@ const Game = props => {
         return copy;
     }
 
-    useEffect(() => {
-        const newRows = calGridSize(w,h,boxSize).rows-1;
-        const newCols = calGridSize(w,h,boxSize).cols-1;
-        setRows(newRows);
-        setCols(newCols);
-    }, [boxSize, w, h])
+    // useEffect(() => {
+    //     const newRows = calGridSize(w,h,boxSize).rows-1;
+    //     const newCols = calGridSize(w,h,boxSize).cols-1;
+    //     setRows(newRows);
+    //     setCols(newCols);
+    // }, [boxSize, w, h])
 
     useEffect(() => {
         let timeoutObj = null;

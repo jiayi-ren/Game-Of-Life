@@ -19,7 +19,7 @@ const Grid = props => {
                     row={i}
                     col={j}
                     selectBox={selectBox}
-                    boxSize={boxSize}
+                    // boxSize={boxSize}
                 />
             );
         }

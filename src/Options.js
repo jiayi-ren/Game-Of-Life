@@ -5,16 +5,16 @@ const Options = props => {
     const { run, toggle,
         reset, random,
         setSpeed, speed,
-        boxSize, setBoxSize
+        // boxSize, setBoxSize
     } = props
 
     const speedChange = evt => {
         setSpeed(1000 - parseInt(evt.target.value))
     }
 
-    const boxSizeChange = evt => {
-        setBoxSize(parseInt(evt.target.value));
-    }
+    // const boxSizeChange = evt => {
+    //     setBoxSize(parseInt(evt.target.value));
+    // }
 
     return (
         <div className="options">
@@ -29,14 +29,14 @@ const Options = props => {
                     onChange={speedChange}
                 ></input>
             </label>
-            <label>Grid
+            {/* <label>Grid
                 <input type="range"
-                    min="10"
+                    min="15"
                     max="30"
                     value={boxSize}
                     onChange={boxSizeChange}
                 ></input>
-            </label>
+            </label> */}
         </div>
     )
 }
