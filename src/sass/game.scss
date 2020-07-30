@@ -1,13 +1,86 @@
+.game {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header {
+    width: 100%;
+    margin-top: 20px;
+}
+
 h1 {
-    text-align: center;;
-    font-size: 3rem;
+    text-align: center;
+    font-size: 4rem;
+    color: white;
 }
 
 span {
     font-size: 2rem;
+    color: white;
 }
 
 h2 {
     text-align: center;
     font-size: 2rem;
+    color: white;
+}
+
+.game-screen {
+    width: 50%;
+    transition: all ease-in-out 2s;
+
+    @media (max-width: 1500px) {
+        width: 60%;
+        transition: all ease-in-out 2s;
+    }
+
+    @media (max-width: 1000px) {
+        width: 100%;
+        transition: all ease-in-out 2s;
+    }
+}
+
+.game-description {
+    width: 50%;
+    transition: all ease-in-out 2s;
+    color: white;
+    position: relative;
+
+    h2 {
+        margin: 30px auto;
+    }
+
+    h3 {
+        position: absolute;
+        bottom: 0;
+        left:43%;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: white;
+    }
+
+    p {
+        width: 80%;
+        padding: 10px;
+        margin: auto;
+        font-size: 2rem;
+
+        @media (max-width: 1500px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 1500px) {
+        width: 40%;
+        transition: all ease-in-out 2s;
+    }
+
+    @media (max-width: 1000px) {
+        width: 100%;
+        transition: all ease-in-out 2s;
+    }
 }

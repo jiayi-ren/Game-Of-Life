@@ -3,7 +3,13 @@ import Box from './Box';
 
 const Grid = props => {
 
-    const { rows, cols, grid, selectBox, boxSize } = props
+    const { rows,
+        cols,
+        grid,
+        selectBox,
+        // color
+    } = props
+    
     let rowsArray = []
     let boxClass = "" 
 
@@ -20,17 +26,19 @@ const Grid = props => {
                     col={j}
                     selectBox={selectBox}
                     // boxSize={boxSize}
+                    // color={color}
                 />
             );
         }
     }
+    
 
     return (
         <div className="grid-container" >
             <div className="grid"
                 style={{
                 display: "grid",
-                gridTemplateColumns: `repeat(${cols}, ${boxSize}px)`
+                gridTemplateColumns: `repeat(${cols}, 15px)`
                 }}
             >
             {rowsArray}
