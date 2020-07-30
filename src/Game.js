@@ -15,12 +15,19 @@ const operations = [
 
 const Game = props => {
 
-    const [speed, setSpeed] = useState(500); // speed, 1 generation/100ms
-    const [rows, setRows] = useState(50); // row
-    const [cols, setCols] = useState(100);
+    let w = window.innerWidth;
+    let h = window.innerHeight;
+
+    const initRows = calGridSize(w,h,20).rows-1;
+    const initCols = calGridSize(w,h,20).cols-1;
+
+    const [speed, setSpeed] = useState(500); // speed, 1 generation/500ms
+    const [rows, setRows] = useState(initRows);
+    const [cols, setCols] = useState(initCols);
     const [generation, setGeneration] = useState(0);
-    const [grid, setGrid] = useState(createGrid(50, 100));
+    const [grid, setGrid] = useState(createGrid(initRows, initCols));
     const [isRunning, setIsRunning] = useState(false);
+    const [boxSize, setBoxSize] = useState(20);
 
     function nextGen(gridOriginal, rowsNum, colsNum) {
         let copy = JSON.parse(JSON.stringify(gridOriginal))
@@ -44,6 +51,13 @@ const Game = props => {
         }
         return copy;
     }
+
+    useEffect(() => {
+        const newRows = calGridSize(w,h,boxSize).rows-1;
+        const newCols = calGridSize(w,h,boxSize).cols-1;
+        setRows(newRows);
+        setCols(newCols);
+    }, [boxSize, w, h])
 
     useEffect(() => {
         let timeoutObj = null;
@@ -89,12 +103,14 @@ const Game = props => {
 
     return (
         <div>
-            <p>Generation: {generation}</p>
+            <h1><span>John Conway's</span> Game of Life</h1>
+            <h2>Generation: {generation}</h2>
             <Grid 
                 rows={rows}
                 cols={cols}
                 selectBox={selectBox}
                 grid={grid}
+                boxSize={boxSize}
             />
             <Options
                 run={isRunning}
@@ -103,8 +119,10 @@ const Game = props => {
                 random={randomLexicon}
                 setRows={setRows}
                 setCols={setCols}
-                setSpeed={setSpeed}
                 speed={speed}
+                setSpeed={setSpeed}
+                boxSize={boxSize}
+                setBoxSize={setBoxSize}
             />
         </div>
     )
@@ -118,5 +136,11 @@ function createGrid(rowsNum, colsNum) {
     return rows;
 }
 
+function calGridSize(width, height, boxSize) {
+    let rows = Math.floor(height*0.7 / boxSize);
+    let cols = Math.floor(width*0.9 / boxSize);
+
+    return {rows, cols};
+}
 
 export default Game;

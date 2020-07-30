@@ -1,5 +1,13 @@
 .grid-container {
-    width: 400px;
-    height: 400px;
+    width: 90%;
+    height: 80vh;
     overflow: hidden;
+    margin: auto;
+
+}
+
+.grid {
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
 }
